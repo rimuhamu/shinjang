@@ -4,8 +4,8 @@ import { Search } from 'lucide-react';
 
 export default function Home() {
   return (
-    <div className=' mx-auto text-center flex flex-col h-[calc(100vh-50px)] items-center justify-center max-w-max gap-5'>
-      <h1 className='text-6xl text-black-600 font-extrabold tracking-normal sm:text-8xl italic'>
+    <div className=' mx-auto text-center flex flex-col h-[calc(100vh-170px)] items-center justify-center max-w-max gap-5'>
+      <h1 className='text-6xl text-black font-extrabold tracking-normal sm:text-8xl italic'>
         Shinjang
         <span className='text-rose-500'>!</span>
       </h1>
