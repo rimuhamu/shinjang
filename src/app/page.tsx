@@ -1,8 +1,11 @@
 'use client';
 
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { NameValidator, TNameValidator } from '@/lib/validators/name-validator';
+import { Button } from '@/src/components/ui/button';
+import { Input } from '@/src/components/ui/input';
+import {
+  NameValidator,
+  TNameValidator,
+} from '@/src/lib/validators/name-validator';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Search } from 'lucide-react';
 import { useRouter } from 'next/navigation';
