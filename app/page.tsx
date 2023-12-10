@@ -2,10 +2,7 @@
 
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import {
-  PhoneNumberValidator,
-  TPhoneNumberValidator,
-} from '@/lib/validators/phone-number-validator';
+import { NameValidator, TNameValidator } from '@/lib/validators/name-validator';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Search } from 'lucide-react';
 import { useRouter } from 'next/navigation';
@@ -17,16 +14,16 @@ export default function Home() {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<TPhoneNumberValidator>({
-    resolver: zodResolver(PhoneNumberValidator),
+  } = useForm<TNameValidator>({
+    resolver: zodResolver(NameValidator),
     defaultValues: {
-      phoneNumber: '',
+      name: '',
     },
   });
 
-  const onSubmit = ({ phoneNumber }: TPhoneNumberValidator) => {
+  const onSubmit = ({ name }: TNameValidator) => {
     router.push('/orders');
-    console.log(phoneNumber);
+    console.log(name);
   };
 
   return (
@@ -39,12 +36,12 @@ export default function Home() {
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className='flex flex-row gap-5'>
           <Input
-            {...register('phoneNumber')}
-            placeholder='Input your phone number'
+            {...register('name')}
+            placeholder='Input your name'
             className='w-[800px]'
           />
 
-          <Button type='submit'>
+          <Button>
             <Search />
           </Button>
         </div>
