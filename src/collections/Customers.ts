@@ -9,6 +9,9 @@ export const Customers: CollectionConfig = {
   // admin: {
   //   useAsTitle: 'title',
   // },
+  admin: {
+    useAsTitle: 'name',
+  },
   fields: [
     {
       name: 'name',
@@ -19,7 +22,7 @@ export const Customers: CollectionConfig = {
       hasMany: true,
       name: 'ordered',
       type: 'relationship',
-      relationTo: 'orders',
+      relationTo: 'products',
       required: true,
     },
   ],

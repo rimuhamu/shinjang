@@ -10,7 +10,7 @@ export interface Config {
   collections: {
     users: User;
     customers: Customer;
-    orders: Order;
+    products: Product;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
   };
@@ -33,14 +33,14 @@ export interface User {
 export interface Customer {
   id: string;
   name: string;
-  ordered: (string | Order)[];
+  ordered: (string | Product)[];
   updatedAt: string;
   createdAt: string;
 }
-export interface Order {
+export interface Product {
   id: string;
+  name: string;
   total: number;
-  placedBy: string | Customer;
   updatedAt: string;
   createdAt: string;
 }
