@@ -8,8 +8,11 @@ import {
 } from '@/src/lib/validators/name-validator';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Search } from 'lucide-react';
+
 import { useRouter } from 'next/navigation';
+
 import { useForm } from 'react-hook-form';
+import { createCookies } from '../createCookies';
 
 export default function Home() {
   const router = useRouter();
@@ -26,7 +29,7 @@ export default function Home() {
 
   const onSubmit = ({ name }: TNameValidator) => {
     router.push('/orders');
-    console.log(name);
+    createCookies(name);
   };
 
   return (
