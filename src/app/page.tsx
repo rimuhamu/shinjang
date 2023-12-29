@@ -12,7 +12,7 @@ import { Search } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 
 import { useForm } from 'react-hook-form';
-import { createCookies } from '../createCookies';
+import { setCookie } from 'cookies-next';
 
 export default function Home() {
   const router = useRouter();
@@ -29,7 +29,7 @@ export default function Home() {
 
   const onSubmit = ({ name }: TNameValidator) => {
     router.push('/orders');
-    createCookies(name);
+    setCookie('name', name);
   };
 
   return (
