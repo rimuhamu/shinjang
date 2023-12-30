@@ -89,5 +89,10 @@ export const Products: CollectionConfig = {
       label: 'Tax Payment',
       type: 'number',
     },
+    {
+      name: 'notes',
+      label: 'Notes',
+      type: 'text',
+    },
   ],
 };
