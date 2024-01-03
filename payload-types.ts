@@ -46,6 +46,7 @@ export interface Product {
   status: 'Ordered to Seller' | 'In Progress' | 'Arrived WH LN' | 'OTW INA' | 'Arrived WH INA' | 'Arrived Admin';
   isPaid?: boolean | null;
   taxPayment?: number | null;
+  notes?: string | null;
   updatedAt: string;
   createdAt: string;
 }
