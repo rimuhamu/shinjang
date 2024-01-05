@@ -40,11 +40,11 @@ export interface Customer {
 export interface Product {
   id: string;
   name: string;
-  price: number;
+  price: string;
   batchNumber: number;
   country: 'Korea' | 'China' | 'Japan';
   status: 'Ordered to Seller' | 'In Progress' | 'Arrived WH LN' | 'OTW INA' | 'Arrived WH INA' | 'Arrived Admin';
-  isPaid?: boolean | null;
+  isPaid: boolean;
   taxPayment?: number | null;
   notes?: string | null;
   updatedAt: string;

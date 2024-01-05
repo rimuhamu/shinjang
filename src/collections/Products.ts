@@ -20,7 +20,7 @@ export const Products: CollectionConfig = {
     },
     {
       name: 'price',
-      type: 'number',
+      type: 'text',
       required: true,
     },
     {
@@ -82,7 +82,9 @@ export const Products: CollectionConfig = {
     {
       name: 'isPaid',
       label: 'Paid',
+      defaultValue: 'false',
       type: 'checkbox',
+      required: true,
     },
     {
       name: 'taxPayment',
