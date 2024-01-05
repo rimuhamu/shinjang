@@ -1,8 +1,9 @@
 import { getCookie } from 'cookies-next';
 import payload from 'payload';
 import { cookies } from 'next/headers';
-import { DataTable } from './data-table';
-import { columns } from './columns';
+import { ProductClient } from './client';
+import { Product } from '@/payload-types';
+import { ProductColumn } from '@/src/app/orders/columns';
 
 export default async function OrdersPage() {
   const customerName = getCookie('name', { cookies });
@@ -19,16 +20,14 @@ export default async function OrdersPage() {
   console.log('customer name', customerName);
   console.log(result.docs[0].ordered);
 
-  const orderData = result.docs[0].ordered;
+  const products = result.docs[0].ordered;
 
   return (
     <div>
       <div className='flex flex-col items-start gap-5 self-stretch py-4 px-2'>
-        <div className=' text-rose-700 text-3xl font-extrabold '>Orders</div>
-        <DataTable
-          columns={columns}
-          data={orderData}
-        />
+        {/* //! data should be string instead of typeProduct
+         @ts-expect-error*/}
+        <ProductClient data={products} />
       </div>
     </div>
   );

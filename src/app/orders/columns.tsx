@@ -3,7 +3,27 @@
 import { Product } from '@/payload-types';
 import { ColumnDef } from '@tanstack/react-table';
 
-export const columns: ColumnDef<Product>[] = [
+export type ProductColumn = {
+  id: string;
+  name: string;
+  price: string;
+  batchNumber: number;
+  country: 'Korea' | 'China' | 'Japan';
+  status:
+    | 'Ordered to Seller'
+    | 'In Progress'
+    | 'Arrived WH LN'
+    | 'OTW INA'
+    | 'Arrived WH INA'
+    | 'Arrived Admin';
+  isPaid: boolean;
+  taxPayment?: number | null;
+  notes?: string | null;
+  updatedAt: string;
+  createdAt: string;
+};
+
+export const columns: ColumnDef<ProductColumn>[] = [
   {
     accessorKey: 'name',
     header: 'Name',
