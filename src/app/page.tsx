@@ -36,7 +36,6 @@ export default function Home() {
     <div className=' mx-auto text-center flex flex-col h-[calc(100vh-170px)] items-center justify-center max-w-max gap-5'>
       <h1 className='text-6xl text-black font-extrabold tracking-normal sm:text-8xl italic'>
         Shinjang
-        <span className='text-rose-500'>!</span>
       </h1>
       <p className='text-base text-rose-400'>Track your orders easily</p>
       <form onSubmit={handleSubmit(onSubmit)}>
