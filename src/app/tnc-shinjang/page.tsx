@@ -1,8 +1,8 @@
-export default function TncPage() {
+export default function TncShinjangPage() {
   return (
-    <div className='mt-10 mx-auto flex flex-col items-center justify-center w-1/2 gap-5 '>
+    <div className='mt-10 mx-auto flex flex-col items-center justify-center w-1/2 gap-10 leading-relaxed '>
       <h4 className='text-2xl text-black font-extrabold tracking-normal text-'>
-        Terms and Conditions Shinjang
+        Terms and Conditions GO by Shinjang
       </h4>
       <ol className='list-decimal'>
         <li>Coret = membeli.</li>
@@ -31,11 +31,14 @@ export default function TncPage() {
           dahulu).{' '}
           <span className='font-bold'>
             Tidak boleh cancel saat sudah direspon oleh admin (by react emoji
-            atau chat). Cancel = cari opslot sendiri.
+            atau chat). Cancel = cari{' '}
+            <span className='text-red-600'>opslot</span> sendiri.
           </span>
         </li>
         <li>
-          <span className='font-bold'>TIDAK ADA SISTEM CICIL atau KEEP.</span>{' '}
+          <span className='font-bold text-red-600'>
+            TIDAK ADA SISTEM CICIL atau KEEP.
+          </span>{' '}
           Admin juga butuh uang full untuk transfer ke seller dan transfer ke
           sellernya pun tidak bisa dicicil.{' '}
         </li>
@@ -50,6 +53,7 @@ export default function TncPage() {
           Untuk personal order, admin tidak tanggung jawab jika terjadi scam.
         </li>
       </ol>
+      <p className='font-bold'> Thank you udah jajan di Shinjang!</p>
     </div>
   );
 }

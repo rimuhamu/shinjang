@@ -1,5 +1,18 @@
+'use client';
+
 import Link from 'next/link';
 import Logo from './Logo';
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuIndicator,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  NavigationMenuViewport,
+  navigationMenuTriggerStyle,
+} from '@/src/components/ui/navigation-menu';
 
 export const Navbar = () => {
   return (
@@ -11,17 +24,51 @@ export const Navbar = () => {
               <Logo />
             </div>
             <div className='px-5'>
-              <Link href='/tnc'>
-                <h1 className='text-black font-bold tracking-tight  hover:text-rose-400 transition'>
-                  Terms and Conditions
-                </h1>
-              </Link>
+              <NavigationMenu>
+                <NavigationMenuList>
+                  {/** Terms and Conditions */}
+                  <NavigationMenuItem>
+                    <NavigationMenuTrigger className='text-black text-base font-bold tracking-tight  hover:text-rose-400 transition'>
+                      Terms and Conditions
+                    </NavigationMenuTrigger>
+                    <NavigationMenuContent>
+                      <Link
+                        href='/tnc-shinjang'
+                        legacyBehavior
+                        passHref>
+                        <NavigationMenuLink
+                          className={navigationMenuTriggerStyle()}>
+                          T&C GO by Shinjang
+                        </NavigationMenuLink>
+                      </Link>
+                      <Link
+                        href='/tnc-shopee'
+                        legacyBehavior
+                        passHref>
+                        <NavigationMenuLink
+                          className={navigationMenuTriggerStyle()}>
+                          T&C Shopee Checkout
+                        </NavigationMenuLink>
+                      </Link>
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
+                  {/** Payments */}
+                  <NavigationMenuItem>
+                    <Link
+                      href='/tnc'
+                      legacyBehavior
+                      passHref>
+                      <NavigationMenuLink
+                        className={navigationMenuTriggerStyle()}>
+                        <div className='text-black text-base font-bold tracking-tight  hover:text-rose-400 transition'>
+                          Payments
+                        </div>
+                      </NavigationMenuLink>
+                    </Link>
+                  </NavigationMenuItem>
+                </NavigationMenuList>
+              </NavigationMenu>
             </div>
-            <Link href='/payment'>
-              <h1 className='text-black font-bold tracking-tight  hover:text-rose-400 transition'>
-                Payment
-              </h1>
-            </Link>
           </div>
         </div>
       </header>
