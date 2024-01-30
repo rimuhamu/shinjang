@@ -5,12 +5,10 @@ import Logo from './Logo';
 import {
   NavigationMenu,
   NavigationMenuContent,
-  NavigationMenuIndicator,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  NavigationMenuViewport,
   navigationMenuTriggerStyle,
 } from '@/src/components/ui/navigation-menu';
 
@@ -20,7 +18,7 @@ export const Navbar = () => {
       <header className='relative bg-white'>
         <div className='border-b-2 border-rose-600 py-1'>
           <div className='flex items-center'>
-            <div className='pl-10 pr-5 py-1'>
+            <div className='pl-10 pr-1 py-2'>
               <Logo />
             </div>
             <div className='px-5'>

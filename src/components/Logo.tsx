@@ -11,8 +11,8 @@ const Logo = () => {
         onClick={() => router.push('/')}
         alt='Logo'
         className='hidden md:block cursor-pointer'
-        height='50'
-        width='50'
+        height='55'
+        width='55'
         src='/logo.png'
       />
     </div>
