@@ -1,6 +1,5 @@
 'use client';
 
-import { Product } from '@/payload-types';
 import { ColumnDef } from '@tanstack/react-table';
 
 export type ProductColumn = {
