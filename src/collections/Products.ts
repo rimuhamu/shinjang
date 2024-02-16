@@ -96,5 +96,12 @@ export const Products: CollectionConfig = {
       label: 'Notes',
       type: 'text',
     },
+    // {
+    //   name: 'customer',
+    //   label: 'Customer',
+    //   type: 'relationship',
+    //   relationTo: 'customers',
+    //   hasMany: false,
+    // },
   ],
 };

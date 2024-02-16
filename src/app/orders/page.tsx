@@ -1,11 +1,15 @@
-import { getCookie } from 'cookies-next';
 import payload from 'payload';
-import { cookies } from 'next/headers';
 import { ProductClient } from './client';
 import { redirect } from 'next/navigation';
+import { Heading } from '@/src/components/Heading';
+import { Separator } from '@/src/components/ui/separator';
 
-export default async function OrdersPage() {
-  const customerName = getCookie('name', { cookies });
+export default async function OrdersPage({
+  searchParams,
+}: {
+  searchParams?: { [key: string]: string | undefined };
+}) {
+  const customerName = searchParams?.name;
 
   const result = await payload.find({
     collection: 'customers',
@@ -30,6 +34,13 @@ export default async function OrdersPage() {
   return (
     <div className='flex-col'>
       <div className='flex-1 space-y-4 p-8 pt-6'>
+        <div className='flex items-center justify-between'>
+          <Heading
+            title={`Orders for ${customerName}`}
+            description='View all your orders.'
+          />
+        </div>
+        <Separator />
         {/* //! data should be string instead of typeProduct
          @ts-expect-error*/}
         <ProductClient data={products} />

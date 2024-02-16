@@ -18,12 +18,26 @@ export const Navbar = () => {
       <header className='relative bg-white'>
         <div className='border-b-2 border-rose-600 py-1'>
           <div className='flex items-center'>
-            <div className='pl-10 pr-1 py-2'>
+            <div className='pl-10 pr-1 py-1'>
               <Logo />
             </div>
             <div className='px-5'>
               <NavigationMenu>
                 <NavigationMenuList>
+                  {/** Rate Conversion */}
+                  <NavigationMenuItem>
+                    <Link
+                      href='/tnc'
+                      legacyBehavior
+                      passHref>
+                      <NavigationMenuLink
+                        className={navigationMenuTriggerStyle()}>
+                        <div className='text-black text-base font-bold tracking-tight  hover:text-rose-400 transition'>
+                          Rate Conversion
+                        </div>
+                      </NavigationMenuLink>
+                    </Link>
+                  </NavigationMenuItem>
                   {/** Terms and Conditions */}
                   <NavigationMenuItem>
                     <NavigationMenuTrigger className='text-black text-base font-bold tracking-tight  hover:text-rose-400 transition'>
@@ -60,6 +74,20 @@ export const Navbar = () => {
                         className={navigationMenuTriggerStyle()}>
                         <div className='text-black text-base font-bold tracking-tight  hover:text-rose-400 transition'>
                           Payments
+                        </div>
+                      </NavigationMenuLink>
+                    </Link>
+                  </NavigationMenuItem>
+                  {/** Testimonial */}
+                  <NavigationMenuItem>
+                    <Link
+                      href='/tnc'
+                      legacyBehavior
+                      passHref>
+                      <NavigationMenuLink
+                        className={navigationMenuTriggerStyle()}>
+                        <div className='text-black text-base font-bold tracking-tight  hover:text-rose-400 transition'>
+                          Testimonial
                         </div>
                       </NavigationMenuLink>
                     </Link>
