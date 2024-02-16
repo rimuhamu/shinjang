@@ -24,20 +24,6 @@ export const Navbar = () => {
             <div className='px-5'>
               <NavigationMenu>
                 <NavigationMenuList>
-                  {/** Rate Conversion */}
-                  <NavigationMenuItem>
-                    <Link
-                      href='/tnc'
-                      legacyBehavior
-                      passHref>
-                      <NavigationMenuLink
-                        className={navigationMenuTriggerStyle()}>
-                        <div className='text-black text-base font-bold tracking-tight  hover:text-rose-400 transition'>
-                          Rate Conversion
-                        </div>
-                      </NavigationMenuLink>
-                    </Link>
-                  </NavigationMenuItem>
                   {/** Terms and Conditions */}
                   <NavigationMenuItem>
                     <NavigationMenuTrigger className='text-black text-base font-bold tracking-tight  hover:text-rose-400 transition'>
@@ -64,10 +50,25 @@ export const Navbar = () => {
                       </Link>
                     </NavigationMenuContent>
                   </NavigationMenuItem>
+                  {/** Rate Conversion */}
+                  <NavigationMenuItem>
+                    <Link
+                      href='/rate-conversion'
+                      legacyBehavior
+                      passHref>
+                      <NavigationMenuLink
+                        className={navigationMenuTriggerStyle()}>
+                        <div className='text-black text-base font-bold tracking-tight  hover:text-rose-400 transition'>
+                          Rate Conversion
+                        </div>
+                      </NavigationMenuLink>
+                    </Link>
+                  </NavigationMenuItem>
+
                   {/** Payments */}
                   <NavigationMenuItem>
                     <Link
-                      href='/tnc'
+                      href='/payments'
                       legacyBehavior
                       passHref>
                       <NavigationMenuLink
@@ -81,7 +82,7 @@ export const Navbar = () => {
                   {/** Testimonial */}
                   <NavigationMenuItem>
                     <Link
-                      href='/tnc'
+                      href='/testimonial'
                       legacyBehavior
                       passHref>
                       <NavigationMenuLink
