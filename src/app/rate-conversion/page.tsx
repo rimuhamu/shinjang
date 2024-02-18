@@ -22,8 +22,7 @@ import { Button } from '@/src/components/ui/button';
 
 export default function RateConversionPage() {
   const [priceType, setPriceType] = useState('');
-  const [productOrigin, setProductOrigin] = useState('');
-  const [priceInput, setPriceInput] = useState<Number>();
+  const [currencyName, setCurrencyName] = useState('');
 
   const form = useForm<TPriceValidator>({
     resolver: zodResolver(PriceValidator),
@@ -34,30 +33,17 @@ export default function RateConversionPage() {
   }
 
   return (
-    <div className='py-5 container'>
-      <div className='flex flex-col gap-4 items-center'>
+    <div className='py-5 px-5 container'>
+      <div className='flex flex-col gap-2 items-center'>
         <p className='text-balance font-bold text-sm text-center'>
           Price Exchange Rate
         </p>
-        <ToggleGroup
-          type='single'
-          variant='outline'
-          onValueChange={(value) => setPriceType(value)}>
-          <ToggleGroupItem value='krw'>
-            <p>KRW</p>
-          </ToggleGroupItem>
-          <ToggleGroupItem value='jpy'>
-            <p>JPY</p>
-          </ToggleGroupItem>
-          <ToggleGroupItem value='cny'>
-            <p>CNY</p>
-          </ToggleGroupItem>
-        </ToggleGroup>
+
         {/** FORM */}
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
-            className='space-y-8'>
+            className='space-y-5'>
             <FormField
               control={form.control}
               name='price'
@@ -79,12 +65,47 @@ export default function RateConversionPage() {
                 </FormItem>
               )}
             />
-            <Button type='submit'>Submit</Button>
+            {/** //TODO: put ToggleGroup in FormControl
+             *
+             */}
+            <ToggleGroup
+              type='single'
+              variant='outline'
+              onValueChange={(value) => setCurrencyName(value)}>
+              <ToggleGroupItem value='krw'>
+                <p>KRW</p>
+              </ToggleGroupItem>
+              <ToggleGroupItem value='jpy'>
+                <p>JPY</p>
+              </ToggleGroupItem>
+              <ToggleGroupItem value='cny'>
+                <p>CNY</p>
+              </ToggleGroupItem>
+              <ToggleGroupItem value='usd'>
+                <p>USD</p>
+              </ToggleGroupItem>
+            </ToggleGroup>
+            <ToggleGroup
+              type='single'
+              variant='outline'
+              onValueChange={(value) => setPriceType(value)}>
+              <ToggleGroupItem value='gross'>
+                <p>Gross</p>
+              </ToggleGroupItem>
+              <ToggleGroupItem value='netto'>
+                <p>Netto</p>
+              </ToggleGroupItem>
+            </ToggleGroup>
+            <Button
+              type='submit'
+              className='w-full'>
+              Submit
+            </Button>
           </form>
         </Form>
-        <p className='text-balance font-bold text-sm'>
-          Harga Kotor KR (exclude shipping, admin & fee warehouse)
-        </p>
+
+        <p className='font-bold text-sm mt-5'>Harga Kotor KR</p>
+        <p>(exclude shipping, admin & fee warehouse)</p>
         <div className='border rounded-lg h-20 w-1/2 border-red-500 bg-red-200 '>
           <p className='text-center py-7 font-semibold'>65.000</p>
         </div>
