@@ -27,7 +27,7 @@ export default async function OrdersPage({
   console.log('customer name', customerName);
   console.log(typeof customerName);
   console.log(result.docs[0]);
-  //console.log(result);
+  console.log(searchParams);
 
   const products = result.docs[0].ordered;
 

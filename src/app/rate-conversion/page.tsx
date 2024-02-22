@@ -19,8 +19,12 @@ import {
   FormMessage,
 } from '@/src/components/ui/form';
 import { Button } from '@/src/components/ui/button';
+import { usePathname, useRouter } from 'next/navigation';
 
 export default function RateConversionPage() {
+  const router = useRouter();
+  const pathname = usePathname();
+
   const [priceType, setPriceType] = useState('');
   const [currencyName, setCurrencyName] = useState('');
 
@@ -29,7 +33,13 @@ export default function RateConversionPage() {
   });
 
   function onSubmit(values: TPriceValidator) {
-    console.log(values);
+    const priceInString = values.price.toString();
+    console.log(
+      `${typeof priceInString} ${typeof values.price} ${currencyName}`
+    );
+    router.push(
+      `${pathname}/convert?pt=${priceType}&curr=${currencyName}&price=${values.price}`
+    );
   }
 
   return (
@@ -72,28 +82,28 @@ export default function RateConversionPage() {
               type='single'
               variant='outline'
               onValueChange={(value) => setCurrencyName(value)}>
-              <ToggleGroupItem value='krw'>
-                <p>KRW</p>
+              <ToggleGroupItem value='KR'>
+                <p>KR</p>
               </ToggleGroupItem>
-              <ToggleGroupItem value='jpy'>
-                <p>JPY</p>
+              <ToggleGroupItem value='JP'>
+                <p>JP</p>
               </ToggleGroupItem>
-              <ToggleGroupItem value='cny'>
-                <p>CNY</p>
+              <ToggleGroupItem value='CN'>
+                <p>CN</p>
               </ToggleGroupItem>
-              <ToggleGroupItem value='usd'>
-                <p>USD</p>
+              <ToggleGroupItem value='US'>
+                <p>US</p>
               </ToggleGroupItem>
             </ToggleGroup>
             <ToggleGroup
               type='single'
               variant='outline'
               onValueChange={(value) => setPriceType(value)}>
-              <ToggleGroupItem value='gross'>
-                <p>Gross</p>
+              <ToggleGroupItem value='Kotor'>
+                <p>Kotor</p>
               </ToggleGroupItem>
-              <ToggleGroupItem value='netto'>
-                <p>Netto</p>
+              <ToggleGroupItem value='Bersih'>
+                <p>Bersih</p>
               </ToggleGroupItem>
             </ToggleGroup>
             <Button
@@ -103,12 +113,6 @@ export default function RateConversionPage() {
             </Button>
           </form>
         </Form>
-
-        <p className='font-bold text-sm mt-5'>Harga Kotor KR</p>
-        <p>(exclude shipping, admin & fee warehouse)</p>
-        <div className='border rounded-lg h-20 w-1/2 border-red-500 bg-red-200 '>
-          <p className='text-center py-7 font-semibold'>65.000</p>
-        </div>
       </div>
     </div>
   );
