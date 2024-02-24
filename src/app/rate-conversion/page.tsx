@@ -33,9 +33,8 @@ export default function RateConversionPage() {
   });
 
   function onSubmit(values: TPriceValidator) {
-    const priceInString = values.price.toString();
     console.log(
-      `${typeof priceInString} ${typeof values.price} ${currencyName}`
+      `${typeof values.price} ${typeof values.price} ${currencyName}`
     );
     router.push(
       `${pathname}/convert?pt=${priceType}&curr=${currencyName}&price=${values.price}`
