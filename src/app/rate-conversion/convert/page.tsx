@@ -31,35 +31,47 @@ export default function ConvertPage() {
       break;
   }
 
-  const grossResult = price * 10000 * rate;
-  const semiregistResult = (price * 10000 + 1800) * rate + 25000;
-  const posResult = semiregistResult + 13000;
-  const bantaekResult = price * 10000 * rate;
-  const kurirResult = price * 10000 * rate;
+  const multFactor = 10000;
+  const fee = 25000;
+  const posFee = 1800;
+  const bantaekFee = 13000;
+  const kurirMinFee = 4000;
+  const kurirMaxFee = 5000;
+
+  const grossResult = price * multFactor * rate;
+  const semiregistResult = (price * multFactor + posFee) * rate + fee;
+  const posResult = semiregistResult;
+  const bantaekResult = semiregistResult + bantaekFee;
+  const kurirMinResult = (price * multFactor + kurirMinFee) * rate + fee;
+  const kurirMaxResult = (price * multFactor + kurirMaxFee) * rate + fee;
 
   if (priceType === 'Kotor') {
     return (
-      <>
+      <div className='flex flex-col items-center'>
         <GrossPrice
           priceType={priceType}
           currencyName={currencyName}
           result={grossResult}
         />
         <Button onClick={() => router.push('/')}>Back to Home</Button>
-      </>
+      </div>
     );
   }
 
   if (priceType === 'Bersih') {
     return (
-      <>
+      <div className='flex flex-col items-center'>
         <NetPrice
           priceType={priceType}
           currencyName={currencyName}
-          result={semiregistResult}
+          semiregistResult={semiregistResult}
+          posResult={posResult}
+          bantaekResult={bantaekResult}
+          kurirMinResult={kurirMinResult}
+          kurirMaxResult={kurirMaxResult}
         />
         <Button onClick={() => router.push('/')}>Back to Home</Button>
-      </>
+      </div>
     );
   }
 }
