@@ -31,17 +31,19 @@ export default function Home() {
   };
 
   return (
-    <div className='mx-auto text-center flex flex-col h-[calc(100vh-170px)] items-center justify-center max-w-max gap-5'>
-      <h1 className='text-6xl text-black font-extrabold tracking-normal sm:text-8xl italic'>
+    <div className='mx-auto text-center -z-50 flex flex-col h-dvh items-center justify-center max-w-full gap-2 md:gap-3 lg:gap-5'>
+      <h1 className='text-6xl md:text-7xl lg:text-8xl text-black font-extrabold tracking-normal italic'>
         Shinjang
       </h1>
-      <p className='text-base text-rose-400'>Track your orders easily</p>
+      <p className='text-xs md:text-sm lg:text-base text-rose-400'>
+        Track your orders easily
+      </p>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className='flex flex-row gap-5'>
           <Input
             {...register('name')}
             placeholder='Input your name'
-            className='w-[800px]'
+            className='w-fit md:w-[400px] lg:w-[600px]'
           />
 
           <Button>

@@ -15,7 +15,7 @@ import Image from 'next/image';
 
 export const Navbar = () => {
   return (
-    <nav className='bg-white fixed z-50 top-0 inset-x-0 w-full h-auto border-b-2 border-rose-600 py-1 flex items-center overflow-hidden'>
+    <div className=' bg-white fixed z-50 top-0 inset-x-0 w-full h-auto border-b-2 border-rose-600 py-1 flex items-center'>
       <div className='ml-5 py-1'>
         <Logo />
       </div>
@@ -100,6 +100,6 @@ export const Navbar = () => {
           height={32}
         />
       </div>
-    </nav>
+    </div>
   );
 };
