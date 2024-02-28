@@ -26,7 +26,7 @@ export const NetPrice = ({
   const formattedKurirMaxResult = formatPrice(kurirMaxResult);
   return (
     <div className='flex flex-col flex-1 py-5 px-5 container items-center gap-4'>
-      <p className='font-bold text-sm mt-5'>
+      <p className='font-bold text-base mt-5'>
         Harga {priceType} {currencyName}
       </p>
       <p className='text-sm'>(include shipping, admin & fee warehouse)</p>

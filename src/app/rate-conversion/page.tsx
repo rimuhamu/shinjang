@@ -42,7 +42,7 @@ export default function RateConversionPage() {
   }
 
   return (
-    <div className='py-5 px-5 container'>
+    <div className='py-32 px-5 container'>
       <div className='flex flex-col gap-2 items-center'>
         <p className='text-balance font-bold text-sm text-center'>
           Price Exchange Rate

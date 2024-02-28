@@ -47,7 +47,7 @@ export default function ConvertPage() {
 
   if (priceType === 'Kotor') {
     return (
-      <div className='flex flex-col items-center'>
+      <div className='flex flex-col items-center pt-20'>
         <GrossPrice
           priceType={priceType}
           currencyName={currencyName}
@@ -60,7 +60,7 @@ export default function ConvertPage() {
 
   if (priceType === 'Bersih') {
     return (
-      <div className='flex flex-col items-center'>
+      <div className='flex flex-col items-center pt-20'>
         <NetPrice
           priceType={priceType}
           currencyName={currencyName}
