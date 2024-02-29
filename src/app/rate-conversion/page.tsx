@@ -73,7 +73,6 @@ export default function RateConversionPage() {
                       {...form.register('price', { valueAsNumber: true })}
                       type='number'
                       step='any'
-                      placeholder='0.5'
                     />
                   </FormControl>
                   <FormDescription>
