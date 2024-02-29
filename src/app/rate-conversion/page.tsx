@@ -2,7 +2,7 @@
 
 import { ToggleGroup, ToggleGroupItem } from '@/src/components/ui/toggle-group';
 import { Input } from '@/src/components/ui/input';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import {
   PriceValidator,
@@ -27,6 +27,15 @@ export default function RateConversionPage() {
 
   const [priceType, setPriceType] = useState('');
   const [currencyName, setCurrencyName] = useState('');
+  const [isKR, setIsKR] = useState(false);
+
+  useEffect(() => {
+    if (currencyName === 'KR') {
+      setIsKR(true);
+    } else {
+      setIsKR(false);
+    }
+  }, [currencyName]);
 
   const form = useForm<TPriceValidator>({
     resolver: zodResolver(PriceValidator),
@@ -87,20 +96,19 @@ export default function RateConversionPage() {
               <ToggleGroupItem value='JP'>
                 <p>JP</p>
               </ToggleGroupItem>
-              <ToggleGroupItem value='CN'>
-                <p>CN</p>
-              </ToggleGroupItem>
-              <ToggleGroupItem value='US'>
-                <p>US</p>
+              <ToggleGroupItem value='CH'>
+                <p>CH</p>
               </ToggleGroupItem>
             </ToggleGroup>
             <ToggleGroup
               type='single'
               variant='outline'
               onValueChange={(value) => setPriceType(value)}>
-              <ToggleGroupItem value='Kotor'>
-                <p>Kotor</p>
-              </ToggleGroupItem>
+              {isKR && (
+                <ToggleGroupItem value='Kotor'>
+                  <p>Kotor</p>
+                </ToggleGroupItem>
+              )}
               <ToggleGroupItem value='Bersih'>
                 <p>Bersih</p>
               </ToggleGroupItem>
