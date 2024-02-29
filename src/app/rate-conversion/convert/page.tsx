@@ -15,7 +15,7 @@ export default function ConvertPage() {
   const currencyName = searchParams.get('curr')!;
   const priceInString = searchParams.get('price')!;
 
-  if (currencyName === 'KR') {
+  if (currencyName === 'KR' && !isKR) {
     setIsKR(true);
   }
 
