@@ -15,7 +15,7 @@ import Image from 'next/image';
 
 export const Navbar = () => {
   return (
-    <div className=' bg-white fixed z-50 top-0 inset-x-0 w-full h-auto border-b-2 border-rose-600 py-1 flex items-center'>
+    <div className='bg-white sticky z-50 top-0 inset-x-0 w-auto h-auto border-b-2 border-rose-600 py-1 flex items-center '>
       <div className='ml-5 py-1'>
         <Logo />
       </div>
@@ -89,16 +89,16 @@ export const Navbar = () => {
           </NavigationMenuList>
         </NavigationMenu>
       </div>
-      {/**
-       * //TODO: fix hamburger menu display on medium screen
-       */}
-      <div className='ml-[325px] md:ml-[425px] cursor-pointer lg:hidden'>
-        <Image
-          src='/menu.png'
-          alt='menu'
-          width={32}
-          height={32}
-        />
+      <div className='absolute end-0 grid justify-items-center'>
+        <div className='relative cursor-pointer lg:hidden'>
+          <Image
+            src='/menu.png'
+            alt='menu'
+            width={32}
+            height={32}
+          />
+        </div>
+        <div className='ml-[100px]' />
       </div>
     </div>
   );
