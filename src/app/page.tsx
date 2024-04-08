@@ -31,7 +31,7 @@ export default function Home() {
   };
 
   return (
-    <div className='mx-auto text-center -z-50 flex flex-col h-dvh items-center justify-center max-w-full gap-2 md:gap-3 lg:gap-5'>
+    <div className='mx-auto text-center -z-50 flex flex-col h-[90dvh] items-center justify-center max-w-full gap-2 md:gap-3 lg:gap-5'>
       <h1 className='text-6xl md:text-7xl lg:text-8xl text-black font-extrabold tracking-normal italic'>
         Shinjang
       </h1>
