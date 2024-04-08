@@ -1,7 +1,7 @@
 export default function TncShinjangPage() {
   return (
     <div className='mt-10 mx-auto flex flex-col items-center justify-center w-1/2 gap-10 leading-relaxed '>
-      <h4 className='text-2xl text-black font-extrabold tracking-normal text-'>
+      <h4 className='text-2xl text-black font-extrabold tracking-normal'>
         💰Transfer hanya ke rekening
       </h4>
       <ol className='list-disc'>
