@@ -84,7 +84,7 @@ export const Navbar = () => {
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
-              {/** Testimonial */}
+              {/* * Testimonial
               <NavigationMenuItem>
                 <Link
                   href='/testimonial'
@@ -96,7 +96,7 @@ export const Navbar = () => {
                     </div>
                   </NavigationMenuLink>
                 </Link>
-              </NavigationMenuItem>
+              </NavigationMenuItem> */}
             </NavigationMenuList>
           </NavigationMenu>
         </div>
@@ -160,13 +160,13 @@ export const Navbar = () => {
                 Payments
               </Link>
             </li>
-            <li className='text-black font-bold hover:text-white transition pb-4 text-xl py-4 text-center border-b-2 hover:bg-rose-700  border-rose-900'>
+            {/* <li className='text-black font-bold hover:text-white transition pb-4 text-xl py-4 text-center border-b-2 hover:bg-rose-700  border-rose-900'>
               <Link
                 href='/testimonial'
                 onClick={() => setIsNavbarOpen(!isNavbarOpen)}>
                 Testimonial
               </Link>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>
